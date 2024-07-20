@@ -2,6 +2,7 @@ const express = require("express");
 const morgan = require("morgan");
 const cors = require("cors");
 const http = require("http");
+const path = require('path');
 require("dotenv").config();
 
 // import i18n
@@ -20,7 +21,7 @@ const server = http.createServer(app);
 app.use(express.json({ limit: "50mb" }));
 app.use(express.urlencoded({ limit: "50mb", extended: true }));
 
-app.use(express.static("public"));
+app.use(express.static(path.join(__dirname, 'build')));
 app.use(
   morgan(":method :url :status :res[content-length] - :response-time ms")
 );
@@ -44,6 +45,10 @@ app.use((req, res, next) => {
 const indexRoute = require("./src/routes");
 
 app.use("/", indexRoute);
+console.log("dir name ",path.dirname);
+app.get('*', (req, res) => {
+  res.sendFile(path.join(__dirname, 'build', 'index.html'));
+});
 
 // import db
 const { connect } = require("./src/config/dbConnection");
