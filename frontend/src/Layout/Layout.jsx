@@ -5,7 +5,7 @@ import { Outlet } from "react-router-dom";
 const AppLayout = () => {
   return (
     <>
-      <div>
+      <div className="">
         <Outlet />
       </div>
       <ToastContainer />

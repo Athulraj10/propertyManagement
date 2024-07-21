@@ -1,20 +1,20 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect } from "react";
 
 const Lead = ({ lead, onDelete, onEdit, properties }) => {
   const [isEditing, setIsEditing] = useState(false);
   const [editFormData, setEditFormData] = useState({
     name: lead?.name || "",
     email: lead?.email || "",
-    propertyCardId: lead?.propertyCardId || ""
+    propertyCardId: lead?.propertyCardId || "",
   });
   const [originalData, setOriginalData] = useState({
     name: lead?.name || "",
     email: lead?.email || "",
-    propertyCardId: lead?.propertyCardId || ""
+    propertyCardId: lead?.propertyCardId || "",
   });
   const [errors, setErrors] = useState({
     name: "",
-    email: ""
+    email: "",
   });
 
   useEffect(() => {
@@ -22,12 +22,12 @@ const Lead = ({ lead, onDelete, onEdit, properties }) => {
       setOriginalData({
         name: lead?.name || "",
         email: lead?.email || "",
-        propertyCardId: lead?.propertyCardId || ""
+        propertyCardId: lead?.propertyCardId || "",
       });
       setEditFormData({
         name: lead?.name || "",
         email: lead?.email || "",
-        propertyCardId: lead?.propertyCardId || ""
+        propertyCardId: lead?.propertyCardId || "",
       });
     }
   }, [isEditing, lead]);
@@ -75,11 +75,14 @@ const Lead = ({ lead, onDelete, onEdit, properties }) => {
   };
 
   return (
-    <div className="max-w-sm rounded overflow-hidden shadow-lg bg-white p-4 m-4">
+    <div className="max-w-sm rounded overflow-hidden shadow-lg border  p-4 m-4">
       {isEditing ? (
         <form onSubmit={handleEditSubmit}>
           <div className="mb-4">
-            <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="name">
+            <label
+              className="block text-white text-sm font-bold mb-2"
+              htmlFor="name"
+            >
               Name
             </label>
             <input
@@ -88,13 +91,18 @@ const Lead = ({ lead, onDelete, onEdit, properties }) => {
               placeholder="Name"
               value={editFormData.name}
               onChange={handleInputChange}
-              className="text-black shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+              className="text-black shadow appearance-none border rounded w-full py-2 px-3 text-white leading-tight focus:outline-none focus:shadow-outline"
               required
             />
-            {errors.name && <p className="text-red-500 text-xs mt-1">{errors.name}</p>}
+            {errors.name && (
+              <p className="text-red-500 text-xs mt-1">{errors.name}</p>
+            )}
           </div>
           <div className="mb-4">
-            <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="email">
+            <label
+              className="block text-white text-sm font-bold mb-2"
+              htmlFor="email"
+            >
               Email
             </label>
             <input
@@ -102,23 +110,31 @@ const Lead = ({ lead, onDelete, onEdit, properties }) => {
               name="email"
               value={editFormData.email}
               onChange={handleInputChange}
-              className="text-black shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+              className="text-black shadow appearance-none border rounded w-full py-2 px-3 text-white leading-tight focus:outline-none focus:shadow-outline"
               required
             />
-            {errors.email && <p className="text-red-500 text-xs mt-1">{errors.email}</p>}
+            {errors.email && (
+              <p className="text-red-500 text-xs mt-1">{errors.email}</p>
+            )}
           </div>
           <div className="mb-4">
-            <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="propertyCardId">
+            <label
+              className="block text-white text-sm font-bold mb-2"
+              htmlFor="propertyCardId"
+            >
               Property
             </label>
             <select
               name="propertyCardId"
               value={editFormData.propertyCardId}
               onChange={handleInputChange}
-              className="text-black shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+              className="text-black shadow appearance-none border rounded w-full py-2 px-3 text-white leading-tight focus:outline-none focus:shadow-outline"
               required
             >
-              <option value={editFormData.propertyCardId} disabled>Current Property: {lead?.property?.community}, {lead?.property?.building}, {lead?.property?.unitNo}</option>
+              <option value={editFormData.propertyCardId} disabled>
+                Current Property: {lead?.property?.community},{" "}
+                {lead?.property?.building}, {lead?.property?.unitNo}
+              </option>
               {properties?.map((property) => (
                 <option key={property._id} value={property._id}>
                   {property.community} - {property.building} - {property.unitNo}
@@ -145,10 +161,17 @@ const Lead = ({ lead, onDelete, onEdit, properties }) => {
       ) : (
         <>
           <div className="font-bold text-xl mb-2">{lead?.name}</div>
-          <p className="text-gray-700 text-base">Email: {lead?.email}</p>
-          <p className="text-gray-700 text-base">
-            Property: {lead?.property?.community}, {lead?.property?.building}, {lead?.property?.unitNo}
-          </p>
+          <p className="text-white text-base">Email: {lead?.email}</p>
+          {(lead?.properties?.community ||
+            lead?.properties?.building ||
+            lead?.properties?.unitNo) === undefined ? (
+            <p>Property countn't found</p>
+          ) : (
+            <p className="text-white text-base">
+              Property: {lead?.property?.community}, {lead?.property?.building},{" "}
+              {lead?.property?.unitNo}
+               </p>
+          )}
           <button
             className="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded mt-4"
             onClick={() => onDelete(lead?._id)}

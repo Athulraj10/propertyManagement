@@ -154,7 +154,7 @@ const LeadList = () => {
               placeholder="username"
               value={formData.name}
               onChange={handleInputChange}
-              className="text-black shadow appearance-none border rounded w-full py-2 px-3 leading-tight focus:outline-none focus:shadow-outline"
+              className="text-white shadow appearance-none border rounded w-full py-2 px-3 leading-tight focus:outline-none focus:shadow-outline"
               required
             />
             {errors.name && (
@@ -174,7 +174,7 @@ const LeadList = () => {
               value={formData.email}
               onChange={handleInputChange}
               placeholder="Email"
-              className="text-black shadow appearance-none border rounded w-full py-2 px-3 leading-tight focus:outline-none focus:shadow-outline text-black"
+              className="text-white shadow appearance-none border rounded w-full py-2 px-3 leading-tight focus:outline-none focus:shadow-outline text-white"
               required
             />
             {errors.email && (
@@ -192,11 +192,11 @@ const LeadList = () => {
               name="propertyCardId"
               value={formData.propertyCardId}
               onChange={handleInputChange}
-              className="text-black shadow appearance-none border rounded w-full py-2 px-3 leading-tight focus:outline-none focus:shadow-outline"
+              className="text-white shadow appearance-none border rounded w-full py-2 px-3 leading-tight focus:outline-none focus:shadow-outline"
             >
               <option value="">Select a property</option>
               {properties?.map((property) => (
-                <option className="text-black" key={property._id} value={property._id}>
+                <option className="text-white" key={property._id} value={property._id}>
                   {property.community} - {property.building} - {property.unitNo}
                 </option>
               ))}
@@ -214,7 +214,7 @@ const LeadList = () => {
             Add Lead
           </button>
         </form>
-        {leads && leads !== undefined && !loading && (
+        {leads && leads !== undefined ? (
           <div className="flex flex-wrap">
             {leads?.map((lead) => (
               <Lead
@@ -226,6 +226,8 @@ const LeadList = () => {
               />
             ))}
           </div>
+        ):(
+          <p>Lead Not Added</p>
         )}
       </div>
     </>

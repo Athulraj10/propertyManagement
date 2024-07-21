@@ -2,5 +2,14 @@
 	"invalidToken": "invalidToken",
 	"getPropertyCard": "getPropertyCard",
 	"logout": "logout",
-	"login successfull": "login successfull"
+	"login successfull": "login successfull",
+	"Registration successful": "Registration successful",
+	"userEmailNotExist": "userEmailNotExist",
+	"Customer not allowed to login Adminside": "Customer not allowed to login Adminside",
+	"getleadCard": "getleadCard",
+	"leadDeletedSuccessfully": "leadDeletedSuccessfully",
+	"propertyAddingSuccessfully": "propertyAddingSuccessfully",
+	"Property already exists": "Property already exists",
+	"delete property successfully": "delete property successfully",
+	"updatePropertySuccess": "updatePropertySuccess"
 }

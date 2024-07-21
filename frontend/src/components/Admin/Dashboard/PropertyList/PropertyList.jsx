@@ -57,7 +57,7 @@ const PropertyList = () => {
       addProperty({
         data: formData,
         callback: (data) => {
-          setNewProperties(data);
+          setNewProperties(new Date());
         },
       })
     );
@@ -88,7 +88,7 @@ const PropertyList = () => {
         },
         callback: (data) => {
           if (data) {
-            setNewProperties(data);
+            setNewProperties(new Date());
           }
         },
       })
@@ -104,7 +104,7 @@ const PropertyList = () => {
         data: data,
         callback: (data) => {
           if (data) {
-            setNewProperties(data);
+            setNewProperties(new Date());
           }
         },
       })
@@ -136,7 +136,7 @@ const PropertyList = () => {
                 name="community"
                 value={formData.community}
                 onChange={handleInputChange}
-                className="shadow appearance-none border rounded w-full py-2 px-3 text-black leading-tight focus:outline-none focus:shadow-outline"
+                className="shadow appearance-none border rounded w-full py-2 px-3 text-white leading-tight focus:outline-none focus:shadow-outline"
                 required
               >
                 <option value="CommunityA">CommunityA</option>
@@ -154,7 +154,7 @@ const PropertyList = () => {
                 name="building"
                 value={formData.building}
                 onChange={handleInputChange}
-                className="text-black shadow appearance-none border rounded w-full py-2 px-3 text-black leading-tight focus:outline-none focus:shadow-outline"
+                className="text-white shadow appearance-none border rounded w-full py-2 px-3 text-white leading-tight focus:outline-none focus:shadow-outline"
                 required
               >
                 <option value="BuildingA">BuildingA</option>
@@ -173,7 +173,7 @@ const PropertyList = () => {
                 name="unitNo"
                 value={formData.unitNo}
                 onChange={handleInputChange}
-                className="text-black shadow appearance-none border rounded w-full py-2 px-3 text-black leading-tight focus:outline-none focus:shadow-outline"
+                className="text-white shadow appearance-none border rounded w-full py-2 px-3 text-white leading-tight focus:outline-none focus:shadow-outline"
                 required
               />
             </div>
@@ -189,7 +189,7 @@ const PropertyList = () => {
                 name="lead"
                 value={formData.propertyCardId}
                 onChange={handleInputChange}
-                className="text-black shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                className="text-white shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
               >
                 <option value="Select a Lead" disabled>
                   Select a Lead

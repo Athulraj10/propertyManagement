@@ -34,15 +34,15 @@ export const Home = () => {
               properties?.map((property) => (
                 <div
                   key={property._id}
-                  className="max-w-sm rounded leading-7 overflow-hidden shadow-lg bg-white p-4 m-4"
+                  className="max-w-sm rounded leading-7 overflow-hidden shadow-lg border p-4 m-4"
                 >
-                  <div className="font-bold text-xl mb-2 text-black">
+                  <div className="font-bold text-xl mb-2 text-white">
                     {property.community}
                   </div>
-                  <p className="text-gray-700 text-base text-black">
+                  <p className="text-gray-700 text-base text-white">
                     Building: {property.building}
                   </p>
-                  <p className="text-gray-700 text-base text-black">
+                  <p className="text-gray-700 text-base text-white">
                     Unit No: {property.unitNo}
                   </p>
                 </div>

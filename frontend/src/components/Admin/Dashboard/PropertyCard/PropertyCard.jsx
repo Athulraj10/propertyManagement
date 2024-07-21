@@ -38,24 +38,24 @@ const PropertyCard = ({ property, onDelete, onEdit, onDeleteLead }) => {
 
   return (
     <>
-      <div className="max-w-sm overflow-hidden shadow-lg bg-white p-4 m-4 border rounded-xl w-[400px]">
+      <div className="max-w-sm overflow-hidden shadow-lg  p-4 m-4 border rounded-xl w-[400px]">
         {!isEditing ? (
           <>
             <div className="font-bold text-xl mb-2 ">{property.community}</div>
-            <p className="text-gray-700 text-base">
+            <p className="text-white text-base">
               Building: {property.building}
             </p>
-            <p className="text-gray-700 text-base">
+            <p className="text-white text-base">
               Unit No: {property.unitNo}
             </p>
 
             <div className="mt-4">
-              <div className="font-bold text-lg mb-2">Leads:</div>
+              <div className="font-bold text-lg mb-2 ">Leads:</div>
               {property.leads.map((lead) => (
                 <div key={lead._id} className="mb-2 border rounded-lg p-2 flex justify-between items-center">
                   <div>
-                    <p className="text-gray-700 text-base">Name: {lead.name}</p>
-                    <p className="text-gray-700 text-base">Email: {lead.email}</p>
+                    <p className="text-white text-base">Name: {lead.name}</p>
+                    <p className="text-white text-base">Email: {lead.email}</p>
                   </div>
                   <button
                     className="text-red-500 hover:text-red-700"
@@ -88,7 +88,7 @@ const PropertyCard = ({ property, onDelete, onEdit, onDeleteLead }) => {
               name="community"
               value={editedProperty.community}
               onChange={handleInputChange}
-              className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+              className="shadow appearance-none border rounded w-full py-2 px-3 text-white leading-tight focus:outline-none focus:shadow-outline"
               required
             >
                <option disabled>
@@ -102,7 +102,7 @@ const PropertyCard = ({ property, onDelete, onEdit, onDeleteLead }) => {
               name="building"
               value={editedProperty.building}
               onChange={handleInputChange}
-              className="shadow appearance-none border rounded w-full py-2 px-3 mt-2 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+              className="shadow appearance-none border rounded w-full py-2 px-3 mt-2 text-white leading-tight focus:outline-none focus:shadow-outline"
               required
             >
               <option value="BuildingA">BuildingA</option>

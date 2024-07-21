@@ -14,7 +14,7 @@ module.exports = {
 
       textColor: {
         skin: {
-          primary: "var( --text-primary)",
+          primary: "var(--text-primary)",
         },
       },
 
