@@ -11,5 +11,9 @@
 	"propertyAddingSuccessfully": "propertyAddingSuccessfully",
 	"Property already exists": "Property already exists",
 	"delete property successfully": "delete property successfully",
-	"updatePropertySuccess": "updatePropertySuccess"
+	"updatePropertySuccess": "updatePropertySuccess",
+	"delete lead successfully": "delete lead successfully",
+	"LeadAddingSuccessfully": "LeadAddingSuccessfully",
+	"Lead added successfully": "Lead added successfully",
+	"Lead Already Exist": "Lead Already Exist"
 }
